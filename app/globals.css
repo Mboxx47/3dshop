@@ -2,20 +2,109 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+::-webkit-scrollbar {
+  display: none;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+
+.color-picker {
+  background-color: #ff6f61;
+  border: none;
+  color: white;
+  padding: 12px 24px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 5px 2px;
+  cursor: pointer;
+  border-radius: 50px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s, transform 0.3s;
+
+  pointer-events: auto;
+}
+
+.back-Button {
+  background-color: #530a32ea;
+  border: none;
+  color: white;
+  padding: 12px 24px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 5px 2px;
+  cursor: pointer;
+  border-radius: 50px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s, transform 0.3s;
+
+  pointer-events: auto;
+}
+
+.color-picker:hover {
+  border: 2px solid white;
+  
+}
+
+#blue {
+  background-color: red;
+}
+
+#black {
+  background-color: black;
+}
+
+.wrapper {
+  display: flex;
+  gap: 10px;
+}
+.bg-gradient{
+  @apply bg-gradient-to-br from-red-700 to-red-950
+}
+
+.panel {
+  position: absolute;
+  top: 10;
+  right: 40;
+  width: 50vh;
+  height: 200;
+  background-color: rgba(207, 27, 27, 0.193);
+  border: snow;
+  border-color: white;
+  
+  color: white;
+  font-size: 30px;
+  font-weight: bold;
+
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: -2px 0 6px rgba(0, 0, 0, 0.3);
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.panel h2 {
+  margin: 0;
+  padding: 0;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.dataText {
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  font-weight: lighter;
+  line-height: 1.5;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
   }
-}
-
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
 }
