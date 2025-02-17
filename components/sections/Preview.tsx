@@ -29,17 +29,9 @@ const Preview = ({selectedProduct}:PreviewProps) => {
   labelRenderer.domElement.style.position = 'absolute';
   labelRenderer.domElement.style.top = '0px';
 
-
-  
-  
-  
-  
-  
-  
-
   useEffect(() => {
+    
     const mount = mountRef.current;
-
     if (typeof document !== 'undefined') {
       // code referencing document here
       const wrapper = document.createElement('wrapper');
