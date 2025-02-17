@@ -28,7 +28,19 @@ const Preview = ({selectedProduct}:PreviewProps) => {
   labelRenderer.domElement.style.top = '0px';
 
 
-  // UI
+  
+  
+  
+  
+  
+  
+
+  useEffect(() => {
+    const mount = mountRef.current;
+    const wrapper = document.createElement('wrapper');
+    const sideWrapper = document.createElement('wrapper');
+    
+    // UI
   const blueDiv = document.createElement('div');
   blueDiv.innerHTML ='More Details';
   blueDiv.className = 'color-picker';
@@ -48,17 +60,6 @@ const Preview = ({selectedProduct}:PreviewProps) => {
   const dataPanelText = document.createElement('div');
   dataPanelText.className="dataText";
  
-  
-  
-  
-  
-  
-
-  useEffect(() => {
-    const mount = mountRef.current;
-    const wrapper = document.createElement('wrapper');
-    const sideWrapper = document.createElement('wrapper');
-    
     
     wrapper.className = 'wrapper';
     sideWrapper.className = 'wrapper';

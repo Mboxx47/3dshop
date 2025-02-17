@@ -8,13 +8,12 @@ import { Vector3 } from 'three'
 
 const Products = () => {
   const [selectedProduct, setSelectedProduct] = useState<ProductType>({
-    imgSrc: "/assets/ROG-Strix-Z790-I-Gaming.png",
-    title: "Third Motherboard",
-    price: 99.99,
-    modelSrc: "/assets/Board TestV1.glb",
-    modelDetails: "This model has these features",
-    
-    modelScale: new Vector3(6,6,6)
+    imgSrc: "/assets/R (3).png",
+    title: "Second Motherboard",
+    price: 899.99,
+    modelSrc: "/assets/TestMotherboard.glb",
+    modelDetails: "This model has these features too and more",
+    modelScale: new Vector3(15,15,15)
   })
 
   const handleProductClick = (product: ProductType) =>{
