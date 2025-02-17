@@ -17,14 +17,14 @@ interface PreviewProps{
 
 const Preview = ({selectedProduct}:PreviewProps) => {
   const mountRef = useRef<HTMLDivElement | null>(null);
+  const modelRef = useRef<THREE.Object3D | null>(null);
+  const isMouseDown = useRef<boolean>(false);
+  
   
   useEffect(() => {
     
 
-    const modelRef = useRef<THREE.Object3D | null>(null);
     const labelRenderer = new CSS2DRenderer();
-    const isMouseDown = useRef<boolean>(false);
-    const isInAnimation = useRef<boolean>(false);
     
     labelRenderer.setSize(window.innerWidth, window.innerHeight);
     
