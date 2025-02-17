@@ -37,22 +37,25 @@ const Preview = ({selectedProduct}:PreviewProps) => {
 
   useEffect(() => {
     const mount = mountRef.current;
-    const wrapper = document.createElement('wrapper');
-    const sideWrapper = document.createElement('wrapper');
-    
-    // UI
-  const blueDiv = document.createElement('div');
-  blueDiv.innerHTML ='More Details';
-  blueDiv.className = 'color-picker';
-  blueDiv.id = 'blue';
-  
-  const scene = new THREE.Scene();
-  const backButton = document.createElement('div');
-  backButton.innerHTML ='Close';
-  backButton.className = 'color-picker';
-  backButton.id = 'black'
 
-  
+    if (typeof document !== 'undefined') {
+      // code referencing document here
+      const wrapper = document.createElement('wrapper');
+      const sideWrapper = document.createElement('wrapper');
+      
+      // UI
+      const blueDiv = document.createElement('div');
+      blueDiv.innerHTML ='More Details';
+      blueDiv.className = 'color-picker';
+      blueDiv.id = 'blue';
+      
+      const scene = new THREE.Scene();
+      const backButton = document.createElement('div');
+      backButton.innerHTML ='Close';
+      backButton.className = 'color-picker';
+      backButton.id = 'black'
+      
+      
   
   const dataPanel = document.createElement('div');
   dataPanel.className="panel";
@@ -73,8 +76,8 @@ const Preview = ({selectedProduct}:PreviewProps) => {
     
     scene.add(wrapperObject);
     sideWrapperObject.position.set(-3,0.8,0);
-
-
+    
+    
     ;
     
     if (mount) {
@@ -91,7 +94,7 @@ const Preview = ({selectedProduct}:PreviewProps) => {
     const sceneHeight = window.innerWidth <= window.innerHeight? window.innerWidth : window.innerHeight;
     
     //Animation
-     let mixer: THREE.AnimationMixer ;
+    let mixer: THREE.AnimationMixer ;
      let anim1: THREE.AnimationAction , anim2: THREE.AnimationAction, anim3: THREE.AnimationAction, anim4: THREE.AnimationAction;
 
      
@@ -193,8 +196,8 @@ const Preview = ({selectedProduct}:PreviewProps) => {
         modelRef.current.position.y += velocityY;
 
         if(modelRef.current.position.y <= groundY)
-        {
-          modelRef.current.position.y = groundY;
+          {
+            modelRef.current.position.y = groundY;
           velocityY*= -bounceFactor;
           isBouncing =true
         }else{
@@ -214,7 +217,7 @@ const Preview = ({selectedProduct}:PreviewProps) => {
     animate();
 
     const raycaster = new THREE.Raycaster();
-
+    
     const handleMouseMove = (event: MouseEvent) =>
     {
       if(modelRef.current)
@@ -230,7 +233,7 @@ const Preview = ({selectedProduct}:PreviewProps) => {
           }
       }
     }
-
+    
      
       const handleMouseDown = (event: MouseEvent) =>
       {
@@ -254,9 +257,9 @@ const Preview = ({selectedProduct}:PreviewProps) => {
         //   }
           //else
         isMouseDown.current= true;
-
-
-
+        
+        
+        
         
       }
 
@@ -266,8 +269,8 @@ const Preview = ({selectedProduct}:PreviewProps) => {
         const animateRotationBack = () =>
         {
           if(modelRef.current)
-          {
-            const modelRotation = modelRef.current.rotation;
+            {
+              const modelRotation = modelRef.current.rotation;
             if(Math.abs(modelRotation.y)> 0.01)
             {
               modelRef.current.rotation.y -=(modelRotation.y* 0.01);
@@ -277,7 +280,7 @@ const Preview = ({selectedProduct}:PreviewProps) => {
             else{
               modelRef.current.rotation.y =0;
               
-
+              
             }
             if(Math.abs(modelRotation.x)> 0.01)
               {
@@ -338,7 +341,7 @@ const Preview = ({selectedProduct}:PreviewProps) => {
        
      scene.add(sideWrapperObject);
 
-      });
+    });
 
       backButton.addEventListener('click', function()
     {
@@ -357,7 +360,7 @@ const Preview = ({selectedProduct}:PreviewProps) => {
           y: 0,
           duration: 1
         }
-       );
+      );
        if(modelRef.current)
         {
           gsap.to(modelRef.current.scale, 
@@ -366,7 +369,7 @@ const Preview = ({selectedProduct}:PreviewProps) => {
              y: 15,
              z:15,
              duration: 1
-           }
+            }
          )
        };
      scene.remove(sideWrapperObject);
@@ -374,12 +377,12 @@ const Preview = ({selectedProduct}:PreviewProps) => {
       mount.addEventListener("mouseup", handleIneractionEnd);
       mount.addEventListener("mouseleave", handleIneractionEnd);
       mount.addEventListener("mousemove", handleMouseMove);
+      
 
-
-    return () =>
+      return () =>
     {
       if(mount)
-      {
+        {
         mount.removeChild(renderer.domElement)
         
       }
@@ -392,6 +395,7 @@ const Preview = ({selectedProduct}:PreviewProps) => {
      
     
     }
+  }
   }, [selectedProduct])
   
 
