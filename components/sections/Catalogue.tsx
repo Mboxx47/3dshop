@@ -16,18 +16,18 @@ const products = [
     imgSrc: "/assets/R (3).png",
     title: "Second Motherboard",
     price: 899.99,
-    modelSrc: "/assets/Board TestV1.glb",
+    modelSrc: "/assets/TestMotherboard.glb",
     modelDetails: "This model has these features too and more",
-    modelScale: new Vector3(6,6,6)
+    modelScale: new Vector3(15,15,15)
 
   },
   {
     imgSrc: "/assets/ROG-Strix-Z790-I-Gaming.png",
     title: "Third Motherboard",
     price: 999.99,
-    modelSrc: "/assets/Board TestV1.glb",
+    modelSrc: "/assets/TestMotherboard.glb",
     modelDetails: "This model has these features",
-    modelScale: new Vector3(3,3,3)
+    modelScale: new Vector3(15,15,15)
 
   }
 ];
