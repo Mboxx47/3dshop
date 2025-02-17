@@ -2,6 +2,7 @@
 import Products from "@/components/sections/Products";
 
 
+
 export default function Home() {
   return (
     <div className="text-slate-100">

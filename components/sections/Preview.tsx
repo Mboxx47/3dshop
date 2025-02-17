@@ -9,6 +9,8 @@ import gsap  from 'gsap';
 import { ProductType } from './Catalogue';
 
 
+
+
 interface PreviewProps{
   selectedProduct: ProductType;
 }
