@@ -4,8 +4,8 @@ import "./globals.css";
 
 
 export const metadata: Metadata = {
-  title: "3D preview tutorial",
-  description: "Mbox Learning",
+  title: "3D concurrent Demo",
+ 
 };
 
 export default function RootLayout({
