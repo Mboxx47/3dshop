@@ -1,7 +1,7 @@
 'use client'
 
 import React, {useEffect, useRef} from 'react'
-import Link from 'next/link'
+
 import * as THREE from 'three'
 import { CSS2DRenderer, CSS2DObject,GLTFLoader, OBJLoader } from 'three/examples/jsm/Addons.js';
 import gsap  from 'gsap';
@@ -17,20 +17,23 @@ interface PreviewProps{
 
 const Preview = ({selectedProduct}:PreviewProps) => {
   const mountRef = useRef<HTMLDivElement | null>(null);
-  const modelRef = useRef<THREE.Object3D | null>(null);
-  const labelRenderer = new CSS2DRenderer();
-  const isMouseDown = useRef<boolean>(false);
-  const isInAnimation = useRef<boolean>(false);
   
-  labelRenderer.setSize(window.innerWidth, window.innerHeight);
-  
-
-  labelRenderer.domElement.style.pointerEvents = 'none';
-  labelRenderer.domElement.style.position = 'absolute';
-  labelRenderer.domElement.style.top = '0px';
-
   useEffect(() => {
     
+
+    const modelRef = useRef<THREE.Object3D | null>(null);
+    const labelRenderer = new CSS2DRenderer();
+    const isMouseDown = useRef<boolean>(false);
+    const isInAnimation = useRef<boolean>(false);
+    
+    labelRenderer.setSize(window.innerWidth, window.innerHeight);
+    
+  
+    labelRenderer.domElement.style.pointerEvents = 'none';
+    labelRenderer.domElement.style.position = 'absolute';
+    labelRenderer.domElement.style.top = '0px';
+  
+
     const mount = mountRef.current;
     if (typeof document !== 'undefined') {
       // code referencing document here
