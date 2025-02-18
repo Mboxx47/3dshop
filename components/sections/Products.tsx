@@ -9,8 +9,8 @@ import { Vector3 } from 'three'
 const Products = () => {
   const [selectedProduct, setSelectedProduct] = useState<ProductType>({
     imgSrc: "/assets/R (3).png",
-    title: "Second Motherboard",
-    
+    title: "Second Generation",
+   
     modelSrc: "/assets/TestMotherboard.glb",
     modelDetails: "This model has these features too and more",
     modelScale: new Vector3(15,15,15)

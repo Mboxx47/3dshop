@@ -89,6 +89,8 @@ const Preview = ({selectedProduct}:PreviewProps) => {
     const containerWidth = mount.clientWidth;
     const sceneWidth = containerWidth <= 1536 ? containerWidth: 1536;
     const sceneHeight = window.innerWidth <= window.innerHeight? window.innerWidth : window.innerHeight;
+
+    let mousePos : THREE.Vector2
     
     //Animation
     let mixer: THREE.AnimationMixer ;
@@ -128,8 +130,9 @@ const Preview = ({selectedProduct}:PreviewProps) => {
      scene.add(directionalLightLeft)
      
      const directionalLightRight = new THREE.DirectionalLight(0xffffff,1)
-     directionalLightRight.position.set(10, 5, 0);
-    // scene.add(directionalLightRight)
+     //directionalLightRight.position.set(10, 5, 0);
+     directionalLightRight.rotation.set(-180,-180,-180);
+     scene.add(directionalLightRight)
      
      loader2.load("/assets/textured.obj",(obj) =>
       {
@@ -373,6 +376,7 @@ const Preview = ({selectedProduct}:PreviewProps) => {
     })
       mount.addEventListener("mouseup", handleIneractionEnd);
       mount.addEventListener("mouseleave", handleIneractionEnd);
+      mount.addEventListener("touchcancel", handleIneractionEnd);
       mount.addEventListener("mousemove", handleMouseMove);
       
 

@@ -8,7 +8,7 @@ const products = [
     imgSrc: "/assets/R (2).png",
     title: "First Generation",
     
-    modelDetails: "This model has these features that are the best",
+    modelDetails: "This model has these features",
     modelSrc: "/assets/TestMotherboard.glb",
     modelScale: new Vector3(15,15,15)
   },
@@ -26,7 +26,7 @@ const products = [
     title: "Third Generation",
     
     modelSrc: "/assets/TestMotherboard.glb",
-    modelDetails: "This model has these features",
+    modelDetails: "This model has these features that are the best",
     modelScale: new Vector3(15,15,15)
 
   }
