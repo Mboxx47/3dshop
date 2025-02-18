@@ -10,7 +10,7 @@
 .color-picker {
   background-color: #ff6f61;
   border: none;
-  color: white;
+  color: rgba(4,28,51);
   padding: 12px 24px;
   text-align: center;
   text-decoration: none;
@@ -26,9 +26,9 @@
 }
 
 .back-Button {
-  background-color: #530a32ea;
+  background-color: #de2370;
   border: none;
-  color: white;
+  color: rgba(4,28,51);
   padding: 12px 24px;
   text-align: center;
   text-decoration: none;
@@ -49,11 +49,11 @@
 }
 
 #blue {
-  background-color: red;
+  background-color: rgb(210, 30, 108);
 }
 
 #black {
-  background-color: black;
+  background-color: rgba(67,243,219);
 }
 
 .wrapper {
@@ -61,7 +61,7 @@
   gap: 10px;
 }
 .bg-gradient{
-  @apply bg-gradient-to-br from-red-700 to-red-950
+  @apply bg-gradient-to-br bg-pink-600 to-pink-900
 }
 
 .panel {
@@ -70,7 +70,7 @@
   right: 40;
   width: 50vh;
   height: 200;
-  background-color: rgba(207, 27, 27, 0.193);
+  background-color: rgba(237, 60, 201);
   border: snow;
   border-color: white;
   

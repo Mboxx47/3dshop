@@ -6,16 +6,16 @@ import { modelScale } from 'three/webgpu';
 const products = [
   {
     imgSrc: "/assets/R (2).png",
-    title: "First Motherboard",
-    price: 799.99,
+    title: "First Generation",
+    
     modelDetails: "This model has these features that are the best",
     modelSrc: "/assets/TestMotherboard.glb",
     modelScale: new Vector3(15,15,15)
   },
   {
     imgSrc: "/assets/R (3).png",
-    title: "Second Motherboard",
-    price: 899.99,
+    title: "Second Generation",
+   
     modelSrc: "/assets/TestMotherboard.glb",
     modelDetails: "This model has these features too and more",
     modelScale: new Vector3(15,15,15)
@@ -23,8 +23,8 @@ const products = [
   },
   {
     imgSrc: "/assets/ROG-Strix-Z790-I-Gaming.png",
-    title: "Third Motherboard",
-    price: 999.99,
+    title: "Third Generation",
+    
     modelSrc: "/assets/TestMotherboard.glb",
     modelDetails: "This model has these features",
     modelScale: new Vector3(15,15,15)
@@ -35,7 +35,7 @@ const products = [
 export interface ProductType{
   imgSrc: string;
   title: string;
-  price: number;
+  
   modelSrc: string;
   modelDetails: string;
   modelScale: Vector3;
@@ -57,7 +57,7 @@ const Catalog = ({selectedProduct, onProductClick}: CatalogProps) => {
             index={index}
             title={product.title}
             imgSrc={product.imgSrc}
-            price={product.price}
+            
             modelScale ={product.modelScale}
             isActive={selectedProduct.title === product.title}
             onClick={() => onProductClick(product)}

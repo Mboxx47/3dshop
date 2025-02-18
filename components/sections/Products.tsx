@@ -10,7 +10,7 @@ const Products = () => {
   const [selectedProduct, setSelectedProduct] = useState<ProductType>({
     imgSrc: "/assets/R (3).png",
     title: "Second Motherboard",
-    price: 899.99,
+    
     modelSrc: "/assets/TestMotherboard.glb",
     modelDetails: "This model has these features too and more",
     modelScale: new Vector3(15,15,15)

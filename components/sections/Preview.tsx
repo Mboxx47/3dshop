@@ -44,7 +44,7 @@ const Preview = ({selectedProduct}:PreviewProps) => {
       const blueDiv = document.createElement('div');
       blueDiv.innerHTML ='More Details';
       blueDiv.className = 'color-picker';
-      blueDiv.id = 'blue';
+      blueDiv.id = 'black';
       
       const scene = new THREE.Scene();
       const backButton = document.createElement('div');
